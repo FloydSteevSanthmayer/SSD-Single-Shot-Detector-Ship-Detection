@@ -1,0 +1,5 @@
+nc: 1
+names: ['ship']
+train: ../data/images/train
+val: ../data/images/val
+test: ../data/images/test

@@ -1,0 +1,14 @@
+%% flowchart_colored.mmd
+flowchart LR
+    classDef data fill:#e8f1ff,stroke:#0057d8,stroke-width:1px,color:#00306e;
+    classDef label fill:#fff4e6,stroke:#d88700,stroke-width:1px,color:#5a3b00;
+    classDef process fill:#f3f3f3,stroke:#707070,stroke-width:1px,color:#1a1a1a;
+    classDef model fill:#e9fff0,stroke:#00a651,stroke-width:1px,color:#005227;
+    classDef output fill:#f2e8ff,stroke:#7a00d8,stroke-width:1px,color:#3c006e;
+
+    A(["Raw Ship Images"]):::data --> B(["Annotation (e.g., Label Studio)"]):::label
+    B --> C(["Export Labels / Convert Format"]):::label
+    C --> D(["Prepare Dataset (train / val / test)"]):::process
+    D --> E(["Train SSD Model"]):::model
+    E --> F(["Evaluate Model"]):::model
+    F --> G(["Run Inference on New Images"]):::output
